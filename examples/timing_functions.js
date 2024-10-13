@@ -28,8 +28,19 @@ function time_function(f) {
     f();
     return get_time() - start_time;
 }
-time_function(() => fib_recursive(29));
+// time_function(() => fib_recursive(29));
 
+function time_function_average(f, n) {
+    function time_taken_to_evaluate(time, counter) {
+        return n === 0
+    ? time / counter
+    : time_taken_to_evaluate(time + time, n-1);
+    }
+    return time_function_average(time_function(f), n);
+}
+
+
+time_function_average(() => fib_recursive(29), 2);
 
 
 
