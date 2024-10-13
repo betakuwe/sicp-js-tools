@@ -23,19 +23,27 @@ function fib_recursive(n) {
 // }
 // time_fib_30();
 
-// function time_function(f) {
-//     const start_time = get_time();
-//     f();
-//     return get_time() - start_time;
-// }
-// time_function(() => fib_recursive(29));
-
-
-function time_function_n(f, n) {
+function time_function(f) {
     const start_time = get_time();
-    return n === 0
-    ? (get_time() - start_time) / 100
-    : time_function_n(f(), n - 1);
-    // return get_time - start_time;
+    f();
+    return get_time() - start_time;
 }
-time_function_n(() => fib_recursive(8), 100);
+time_function(() => fib_recursive(29));
+
+// time_function(function () {
+//     return fib_recursive(29);
+// });
+// function time_function_n(f, n) {
+//     const start_time = get_time();
+//     return n === 0
+//     ? (get_time() - start_time) / 100
+//     : time_function_n(f(), n - 1);
+//     return get_time - start_time;
+//}
+// time_function_n(() => fib_recursive(8), 100);
+
+
+
+
+
+
