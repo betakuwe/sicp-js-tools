@@ -6,6 +6,8 @@ function fib_recursive(n) {
     : fib_recursive(n - 1) + fib_recursive(n - 2);
 }
 
+// fib_recursive(10); 
+
 // function fib_30() {
 //     return fib_recursive(30);
 // }
@@ -28,22 +30,22 @@ function time_function(f) {
     f();
     return get_time() - start_time;
 }
-// time_function(() => fib_recursive(29));
+// time_function(() => fib_recursive(9));
+
+
+
 
 function time_function_average(f, n) {
-    function time_taken_to_evaluate(time, counter) {
-        return n === 0
-    ? time / counter
-    : time_taken_to_evaluate(time + time, n-1);
-    }
-    return time_function_average(time_function(f), n);
+    function time_taken_to_evaluate(time, new_time, counter) {
+        return counter === 0
+        ? time / n
+        : time_taken_to_evaluate(time + time_function(f), time, counter-1);
+        }
+    return time_taken_to_evaluate(0, time_function(f), n);
 }
 
 
-time_function_average(() => fib_recursive(29), 2);
-
-
-
+time_function_average(() => fib_recursive(9), 5);
 
 
 
