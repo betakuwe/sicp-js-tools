@@ -41,11 +41,11 @@ function time_function_average(f, n) {
         ? time / n
         : time_taken_to_evaluate(time + time_function(f), time, counter-1);
         }
-    return time_taken_to_evaluate(0, time_function(f), n);
+    return time_taken_to_evaluate(0, 0, n);
 }
 
 
-time_function_average(() => fib_recursive(9), 5);
+time_function_average(() => fib_recursive(5), 4);
 
 
 
