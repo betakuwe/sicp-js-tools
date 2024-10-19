@@ -54,7 +54,7 @@ function test_two_digit(counter, upperbound, lowerbound) {
         } else {
             const n = two_digit();
             display(stringify(n) + " | " + stringify(counter));
-            if (n < lowerbound  || n >= upperbound) {
+            if (n < lowerbound || n >= upperbound) {
                 return false;
             } else {
                 return test(counter - 1);
