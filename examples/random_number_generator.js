@@ -54,11 +54,12 @@ function test_two_digit(counter, upperbound, lowerbound) {
         } else {
             const n = two_digit();
             display(stringify(n) + " | " + stringify(counter));
-            if (n < lowerbound || n >= upperbound) {
-                return false;
-            } else {
-                return test(counter - 1);
-            }
+            return n >= lowerbound && n < upperbound && test(counter - 1);
+            // if (n < lowerbound || n >= upperbound) {
+            //     return false;
+            // } else {
+            //     return test(counter - 1);
+            // }
         }
     }
     return test(counter);
