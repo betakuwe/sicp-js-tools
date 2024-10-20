@@ -1,6 +1,3 @@
-//Include example here
-
-
 //Random die generator
 function throwdie() {
     return math_floor(math_random() * 6) + 1;
@@ -39,8 +36,3 @@ function test_two_digit(counter, upperbound, lowerbound) {
     return test(counter);
 }
 test_two_digit(2000, 100, 10);
-
-
-
-
-
