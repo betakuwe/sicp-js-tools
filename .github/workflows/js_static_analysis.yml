@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: '16' # Specify the Node.js version
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install ESLint globally
+        run: npm install -g eslint
 
-      - name: Run ESLint
-        run: npx eslint '**/*.js'
+      - name: Run ESLint on all JS files
+        run: eslint '**/*.js' || exit 1
