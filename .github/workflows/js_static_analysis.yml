@@ -23,6 +23,10 @@ jobs:
 
       - name: Install ESLint globally
         run: npm install -g eslint
+        
+      - name: Create ESLint config
+        run: |
+          echo "export default [{ files: ['**/*.js'], languageOptions: { ecmaVersion: 2021 }, }];" > eslint.config.js
 
       - name: Run ESLint on all JS files
         run: eslint '**/*.js' || exit 1
