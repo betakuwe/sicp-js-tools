@@ -1,1 +1,0 @@
-hahaha const function return
