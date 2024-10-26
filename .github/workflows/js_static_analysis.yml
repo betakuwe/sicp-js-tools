@@ -19,14 +19,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Specify the Node.js version
+          node-version: '16' # Adjust Node.js version if needed
 
       - name: Install ESLint globally
         run: npm install -g eslint
-        
-      - name: Create ESLint config
+
+      - name: Create ESLint config as CommonJS
         run: |
-          echo "export default [{ files: ['**/*.js'], languageOptions: { ecmaVersion: 2021 }, }];" > eslint.config.js
+          echo "module.exports = [{ files: ['**/*.js'], languageOptions: { ecmaVersion: 2021 }, }];" > eslint.config.cjs
 
       - name: Run ESLint on all JS files
-        run: eslint '**/*.js' || exit 1
+        run: eslint '**/*.js' --config eslint.config.cjs
